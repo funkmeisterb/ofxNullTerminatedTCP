@@ -251,7 +251,8 @@ string ofxTCPClientNullTerminated::receive(){
 		str=tmpStr.substr(0,tmpStr.find(messageDelimiter));
 		tmpStr=tmpStr.substr(tmpStr.find(messageDelimiter)+messageDelimiter.size());
 	}
-	return str;
+	//return str;
+	return tmpStr; // hack to ignore delimiter
 }
 
 //--------------------------
