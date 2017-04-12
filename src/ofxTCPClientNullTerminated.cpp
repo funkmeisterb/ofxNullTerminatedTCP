@@ -252,7 +252,9 @@ string ofxTCPClientNullTerminated::receive(){
 		tmpStr=tmpStr.substr(tmpStr.find(messageDelimiter)+messageDelimiter.size());
 	}
 	//return str;
-	return tmpStr; // hack to ignore delimiter
+	std::string tmpStrCopy = tmpStr;
+	tmpStr.clear();
+	return tmpStrCopy; // hack to ignore delimiter
 }
 
 //--------------------------
